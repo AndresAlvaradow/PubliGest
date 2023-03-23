@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+
+{% block title %}
+    <title>Entidades</title>
+{% endblock %}
+
+{% block conted %}
+<table class="table table-bordered table-striped  table-responsive" id="dataTable" width="100%" cellspacing="0">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Entidad</th>
+        <th>Post</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if entidades_t %}
+      {% for ent in entidades_t %}
+      <tr>
+        <td>{{ ent.id_ent_text }}</td>
+        <td>{{ ent.entidad }}</td>
+        <td>{{ ent.texto  }}</td>
+       
+      </tr>
+     {% endfor %}
+     {% else %}
+      <h1>no hay registro de data</h1>
+     {% endif %}
+    </tbody>
+  </table>
+{% endblock %}

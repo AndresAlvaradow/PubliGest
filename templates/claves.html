@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+
+{% block title %}
+    <title>Entidades</title>
+{% endblock %}
+
+{% block conted %}
+<table class="table table-bordered table-striped  table-responsive" id="dataTable" width="100%" cellspacing="0">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Keywords</th>
+        <th>Texto</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if key %}
+      {% for k in key %}
+      <tr>
+        <td>{{ k.kw_id }}</td>
+        <td>{{ k.keyswords }}</td>
+        <td>{{ k.text  }}</td>
+       
+      </tr>
+     {% endfor %}
+     {% else %}
+      <h1>no hay registro de data</h1>
+     {% endif %}
+    </tbody>
+  </table>
+{% endblock %}

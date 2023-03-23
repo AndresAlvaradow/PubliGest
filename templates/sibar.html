@@ -1,0 +1,55 @@
+{% load static %}
+<div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark sibar">
+    <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+        <a href="#" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+            <span class="fs-5 d-none d-sm-inline">Sistema de PLN</span>
+        </a>
+        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+            <li class="nav-item">
+                <a href="{%url 'Publigest:index'%}" class="nav-link align-middle px-0">
+                    <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Inicio</span>
+                </a>
+            </li>
+           
+            <li>
+                <a href="{%url 'Publigest:tablas'%}" class="nav-link px-0 align-middle">
+                    <i class="bi bi-card-text"></i> <span class="ms-1 d-none d-sm-inline">Post</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle collapsed" aria-expanded="false">
+                    <i class="bi bi-cpu"></i> <span class="ms-1 d-none d-sm-inline">NER</span></a>
+                <ul class="nav flex-column ms-1 collapse" id="submenu1" data-bs-parent="#menu" >
+                    <li class="w-100">
+                        <a href="{%url 'Publigest:entidades'%}" class="nav-link px-0 text-light ms-4"> <span class="d-none d-sm-inline">Entidades</span></a>
+                    </li>
+                    <li>
+                        <a href="{%url 'Publigest:entidades_text'%}" class="nav-link px-0 text-light ms-4"> <span class="d-none d-sm-inline">Entidades texto</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+              <a href="{%url 'Publigest:grafico'%}" class="nav-link px-0 align-middle">
+                <i class="bi bi-flower1"></i> <span class="ms-1 d-none d-sm-inline">LDA</span></a>
+            </li>
+            <li>
+                <a href="{%url 'Publigest:KeyW'%}" class="nav-link px-0 align-middle">
+                    <i class="bi bi-key"></i><span class="ms-1 d-none d-sm-inline">Claves</span></a>
+              </li>
+        </ul>
+        <hr>
+        <div class="dropdown pb-4">
+            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                
+                <span class="d-none d-sm-inline mx-1"><i class="fa-solid fa-user"></i> User</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                <li><a class="dropdown-item" href="/admin">Administrador</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="{%url 'Publigest:logout'%}">Sign out</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

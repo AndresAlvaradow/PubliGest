@@ -1,0 +1,45 @@
+{% extends 'index.html' %}
+
+{% block title %}
+    <title>Grafico LDA</title>
+{% endblock %}
+
+{% block conted %}
+<table class="table table-bordered table-striped  table-responsive" id="dataTable" width="100%" cellspacing="0">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Texto</th>
+        <th>Likes</th>
+        <th>Loves</th>
+        <th>Hahas</th>
+        <th>Wows</th>
+        <th>Sads</th>
+        <th>Hates</th>
+        <th>Cares</th>
+        <th>Link</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      {% if posts %}
+      {% for post in posts %}
+      <tr>
+        <td>{{ post.post_id }}</td>
+        <td>{{ post.text }}</td>
+        <td>{{ post.likes  }}</td>
+        <td>{{ post.loves }}</td>
+        <td>{{ post.hahas }}</td>
+        <td>{{ post.wows }}</td>
+        <td>{{ post.sads }}</td>
+        <td>{{ post.hates }}</td>
+        <td>{{ post.cares }}</td>
+        <td>{{ post.link }}</td>
+      </tr>
+     {% endfor %}
+     {% else %}
+      <h1>no hay registro de data</h1>
+     {% endif %}
+    </tbody>
+  </table>
+{% endblock %}
